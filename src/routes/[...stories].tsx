@@ -1,6 +1,7 @@
 import { Component, createResource, For, Show } from "solid-js";
 import { A, RouteDataArgs, useRouteData } from "solid-start";
 import Story from "~/components/story";
+import Counter from "~/components/Counter";
 import fetchAPI from "~/lib/api";
 import { IStory } from "~/types";
 
@@ -28,6 +29,7 @@ const Stories: Component = () => {
   const { page, type, stories } = useRouteData<typeof routeData>();
   return (
     <div class="news-view">
+      <Counter />
       <div   class="news-list-nav">
         <Show
           when={page() > 1}
